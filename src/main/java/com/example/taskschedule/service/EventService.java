@@ -44,7 +44,6 @@ public class EventService {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime tomorrow = now.plusDays(1);
 
-        // Используем правильные временные рамки для поиска событий в ближайшие 24 часа
         List<Event> events = eventRepository.findByStartTimeBetween(now, tomorrow);
         System.out.println("Найдено событий: " + events.size());
         for (Event event : events) {
